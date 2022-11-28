@@ -5,13 +5,13 @@
 ## Install
 
 ```shell
-npm install @dann/validator-form
+npm install @onlydann/validator-form
 ```
 
 ### Or
 
 ```shell
-yarn add @dann/validator-form
+yarn add @onlydann/validator-form
 ```
 
 ## Usage
