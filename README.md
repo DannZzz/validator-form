@@ -1,6 +1,6 @@
 # Tool for creating text validation forms and use in both sides (frotend, backend)
 
-### Use this package in react with [@dann/react-validator](https://www.npmjs.com/package/@dann/react-validator), and in react native with [@dann/native-validator](https://www.npmjs.com/package/@dann/native-validator)
+### Use this package in react with [@onlydann/react-validator](https://www.npmjs.com/package/@onlydann/react-validator), and in react native with [@onlydann/native-validator](https://www.npmjs.com/package/@onlydann/native-validator)
 
 ## Install
 
