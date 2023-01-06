@@ -63,6 +63,11 @@ class Validator {
                         };
                     }
                     break;
+                case "pattern":
+                    if (!option.pattern.test(value)) {
+                        errors[option.type] = true;
+                    }
+                    break;
                 case "maxLength":
                     if (option.length < value.length) {
                         errors[option.type] = {
@@ -220,6 +225,17 @@ class Validator {
     static get hexColor() {
         return {
             type: "hexColor",
+        };
+    }
+    /**
+     * Custom pattern rule
+     *
+     * @param {RegExp} regexp pattern to check with
+     */
+    static pattern(regexp) {
+        return {
+            type: "pattern",
+            pattern: regexp,
         };
     }
 }

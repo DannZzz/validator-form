@@ -1,4 +1,4 @@
-import { IEmail, IErrors, IHexColor, IMaxLength, IMinLength, IPassword, IRequired, IUrl, ValidationOption } from "./Validator.type";
+import { IEmail, IErrors, IHexColor, IMaxLength, IMinLength, IPassword, IPattern, IRequired, IUrl, ValidationOption } from "./Validator.type";
 export declare class Validator {
     readonly defaultValue: string;
     private options;
@@ -80,4 +80,10 @@ export declare class Validator {
      * Wheter or not value is a hex color code (# is optional)
      */
     static get hexColor(): IHexColor;
+    /**
+     * Custom pattern rule
+     *
+     * @param {RegExp} regexp pattern to check with
+     */
+    static pattern(regexp: RegExp): IPattern;
 }

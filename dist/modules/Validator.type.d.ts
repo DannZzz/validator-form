@@ -1,4 +1,4 @@
-export type ValidationOption = IMaxLength | IMinLength | IRequired | IEmail | IPassword | IUrl | IHexColor;
+export type ValidationOption = IMaxLength | IMinLength | IRequired | IEmail | IPassword | IUrl | IHexColor | IPattern;
 export interface IMaxLength {
     type: "maxLength";
     length: number;
@@ -27,11 +27,16 @@ export interface IUrl {
 export interface IHexColor {
     type: "hexColor";
 }
+export interface IPattern {
+    type: "pattern";
+    pattern: RegExp;
+}
 export interface IErrors {
     minLength?: {
         currentLength: number;
         allowedLength: number;
     };
+    pattern?: boolean;
     maxLength?: {
         currentLength: number;
         allowedLength: number;

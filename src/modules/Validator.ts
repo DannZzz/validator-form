@@ -5,6 +5,7 @@ import {
   IMaxLength,
   IMinLength,
   IPassword,
+  IPattern,
   IRequired,
   IUrl,
   ValidationOption,
@@ -78,6 +79,12 @@ export class Validator {
               currentLength: value.length,
               allowedLength: option.length,
             };
+          }
+          break;
+
+        case "pattern":
+          if (!option.pattern.test(value)) {
+            errors[option.type] = true;
           }
           break;
 
@@ -268,6 +275,18 @@ export class Validator {
   static get hexColor(): IHexColor {
     return {
       type: "hexColor",
+    };
+  }
+
+  /**
+   * Custom pattern rule
+   *
+   * @param {RegExp} regexp pattern to check with
+   */
+  static pattern(regexp: RegExp): IPattern {
+    return {
+      type: "pattern",
+      pattern: regexp,
     };
   }
 }
